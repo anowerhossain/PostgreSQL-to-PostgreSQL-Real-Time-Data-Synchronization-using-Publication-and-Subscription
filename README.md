@@ -2,7 +2,11 @@
 Logical Replication in PostgreSQL allows selective replication of data between databases, offering fine-grained control over what is replicated. Unlike streaming replication, which replicates the entire database, it enables replication of specific tables, schemas, or rows based on custom conditions.
 
 ### Enable Logical Replication
-
+```bash
+wal_level = logical
+max_replication_slots = 7  -- or more, depending on your needs
+max_replication_workers = 4 -- or more, depending on your needs
+```
 ### Create a Publisher Database
 - On the Publisher Server:
 ```sql
